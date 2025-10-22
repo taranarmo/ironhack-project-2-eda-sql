@@ -55,4 +55,7 @@ for idx, salary_str in data.salary.items():
     data.at[idx, 'salary_high'] = high
 
 # %%
+data.loc[(data.location == data.status), "location"] = None
+
+# %%
 data.to_csv("./cleaned_data_science_job_posts_and_salaries_2025.csv", index=False)
