@@ -8,13 +8,12 @@ import ast
 data = pd.read_csv("./data_science_job_posts_and_salaries_2025.zip")
 
 # %%
+# remove , and € from non-money columns, remove suspricios records, parse revenue strings
 data.salary = data.salary.str.replace(",", "").str.replace("€", "")
 data.revenue = data.revenue.str.replace(",", "").str.replace("€", "")
 data.company_size[data.company_size.str.contains("€")] = None
 data.company_size = data.company_size.str.replace(",", "")
 data.company_size = pd.to_numeric(data["company_size"], errors="coerce")
-
-# %%
 data["revenue_category"] = np.where(
     data.revenue.str.contains(r"\d+.\d+[MBT]", regex=True).fillna(False),
     np.nan,
@@ -33,14 +32,7 @@ for col in text_columns:
     data[col] = data[col].str.lower().str.strip()
 
 # %%
-data.post_date = pd.to_datetime([
-    subprocess.run(
-        ("date", "-d", f"2025-10-02 + {datestr}", "+%F"),
-        capture_output=True
-    ).stdout.decode("utf-8").strip() for datestr in data.post_date
-])
-
-# %%
+# parse salary ranges into separate columns
 for idx, salary_str in data.salary.items():
     if '-' in salary_str:
         low, high = salary_str.split(' - ')
@@ -56,9 +48,20 @@ for idx, salary_str in data.salary.items():
     data.at[idx, 'salary_high'] = high
 
 # %%
+# parse post_date strings into datetime, it uses relative format e.g. a month ago or 2 days ago
+data.post_date = pd.to_datetime([
+    subprocess.run(
+        ("date", "-d", f"2025-10-02 + {datestr}", "+%F"),
+        capture_output=True
+    ).stdout.decode("utf-8").strip() for datestr in data.post_date
+])
+
+# %%
+# drop suspicious and non-informative location entries
 data.loc[(data.location == data.status) | (data.location == "fully remote"), "location"] = None
 
 # %%
+# parse country from location
 def extract_country_from_location(location):
     if pd.isna(location) or location is None:
         return None
@@ -214,6 +217,7 @@ def extract_country_from_location(location):
 data['country_code'] = data['location'].apply(extract_country_from_location)
 
 # %%
+# merge skills variations
 skill_mapping = {
     "bash": "linux",
     "amazon": "aws",
@@ -230,6 +234,18 @@ for idx, skills_str in data.skills.items():
     skills = ast.literal_eval(skills_str)
     mapped_skills = [skill_mapping.get(skill, skill) for skill in skills]
     data.at[idx, "skills"] = list(set(mapped_skills))
+
+# %%
+# seniority level is actually a numerical column, at least it has order from low to high
+# mapping it to numbers
+seniority_mapping = {
+    "junior": 1,
+    "midlevel": 2,
+    "senior": 3,
+    "lead": 4,
+}
+
+data["seniority_level_num"] = data.seniority_level.map(seniority_mapping)
 
 # %%
 data.to_csv("./cleaned_data_science_job_posts_and_salaries_2025.csv", index=False)
