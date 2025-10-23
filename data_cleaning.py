@@ -55,7 +55,7 @@ for idx, salary_str in data.salary.items():
     data.at[idx, 'salary_high'] = high
 
 # %%
-data.loc[(data.location == data.status), "location"] = None
+data.loc[(data.location == data.status) | (data.location == "fully remote"), "location"] = None
 
 # %%
 def extract_country_from_location(location):
@@ -200,6 +200,8 @@ def extract_country_from_location(location):
         'bengalaru': 'IN',
         'puerto rico': 'PR',
         'hyderabad': 'IN',
+        'bengaluru': 'IN',
+        'mumbai': 'IN',
     }
     
     for country_name, country_code in country_patterns.items():
