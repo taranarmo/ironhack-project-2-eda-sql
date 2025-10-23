@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import subprocess
+import ast
 
 # %%
 data = pd.read_csv("./data_science_job_posts_and_salaries_2025.zip")
@@ -211,6 +212,24 @@ def extract_country_from_location(location):
     return None
 
 data['country_code'] = data['location'].apply(extract_country_from_location)
+
+# %%
+skill_mapping = {
+    "bash": "linux",
+    "amazon": "aws",
+    "sklearn": "scikit-learn",
+    "database": "sql",
+}
+
+
+for idx, skills_str in data.skills.items():
+    if pd.isna(skills_str) or skills_str is None:
+        data.at[idx, "skills_list"] = []
+        continue
+    
+    skills = ast.literal_eval(skills_str)
+    mapped_skills = [skill_mapping.get(skill, skill) for skill in skills]
+    data.at[idx, "skills"] = list(set(mapped_skills))
 
 # %%
 data.to_csv("./cleaned_data_science_job_posts_and_salaries_2025.csv", index=False)
