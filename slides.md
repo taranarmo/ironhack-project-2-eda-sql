@@ -1,6 +1,7 @@
 ---
 marp: true
 theme: default
+paginate: true
 style: |
   section {
     font-size: 24px;
