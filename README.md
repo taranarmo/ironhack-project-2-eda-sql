@@ -9,4 +9,14 @@ Jobs collected from different locations thus salary variability is great, if pos
 ## Preliminary questions
 
 1. How seniority level and role affect salary
-2. How much do skills cost
+2. How much do different skills cost
+
+## Project desctiption
+
+- ./data_cleaning.py takes raw dataset ./data_science_job_posts_and_salaries_2025.zip and produces ./cleaned_data_science_job_posts_and_salaries_2025.csv
+- ./analysis.py shows the analysis steps as they were done
+- ./skill_analysis.py is responsible for skill analysis
+- ./slides.md is a source file for presentation which is converted by [Marp](https://marp.app/) into pdf or html
+- ./generate_presentation_graphs.py produces graphs for the slides
+- ./flake.nix and ./flake.lock are responsible for local working environment, require [Nix](https://nixos.org/)
+- SQL questions and queries are in ./questions.sql
