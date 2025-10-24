@@ -30,15 +30,24 @@ style: |
   }
 ---
 
-# Data Science Jobs Analysis
+# Data Science Job Posts and Salaries Analysis
 
 Sergei Volkov
+
+---
+
+## Toolset
+
+- Python + Pandas
+- matplotlib and Seaborn for plotting
+- Marp to create this presentation in Markdown
 
 ---
 
 ## Project Overview
 
 ### Dataset
+
 - Data Science Job Posts and Salaries 2025, collected in October
 - Features: job titles, skills, salary, location, company details
 - Job posting from publicly available sources across the globe
@@ -142,37 +151,22 @@ Sergei Volkov
 
 ---
 
-## Key Finding: Skill Prevalence
-
-### Top 10 Most Common Skills
+## Skill Prevalence: Top 10 Most Common Skills
 
 ![](./top_10_most_common_skills.png)
 
 ---
 
-## Key Finding: Skill Value Analysis
-
-### Top 10 Highest Paying Skills
+## Skill Value Analysis: Top 10 Highest Paying Skills
 
 ![](./top_10_highest_paying_skills.png)
 
 ---
 
-## Key Insights & Findings
-
-### High-Value Skills
-
-- *Scala*, *kubernetes*, *Spark* - emerging tech commands premium
-- *R*, *SQL* - established skills with strong compensation
-
-### Market Factors
+## Conclusions
 
 - *Seniority* strongly correlates with compensation
 - *Company size* affects salary variability
-
----
-
-## Conclusion & Strategic Insights
 
 ### For Job Seekers
 
@@ -193,15 +187,3 @@ Sergei Volkov
 - Collect data from sources like Glasdoor to calculate expected salary
 - Correlation between skill combinations and compensation
 - Obtain time-series for trend analysis
-
----
-
-## Toolset
-
-- Python + Pandas
-- matplotlib and Seaborn for plotting
-- Marp to create this presentation in Markdown
-
----
-
-
