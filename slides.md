@@ -36,14 +36,6 @@ Sergei Volkov
 
 ---
 
-## Toolset
-
-- Python + Pandas
-- matplotlib and Seaborn for plotting
-- Marp to create this presentation in Markdown
-
----
-
 ## Project Overview
 
 ### Dataset
