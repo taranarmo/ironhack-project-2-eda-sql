@@ -65,10 +65,8 @@ Sergei Volkov
 
 - Variance between countries is expected
   - Dataset includes jobs in high and low income countries
-  - It is normal though makes it hard to compare salaries directly
 - Some jobs state outstanding salaries
   - Including 2 with €2M+ in India and €8K in US
-  - Extreme values are most probably errors (e.g. wrong currency, not full-time positions)
 
 ---
 
