@@ -32,6 +32,8 @@ style: |
 
 # Data Science Jobs Analysis
 
+Sergei Volkov
+
 ---
 
 ## Project Overview
