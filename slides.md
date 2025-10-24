@@ -150,6 +150,7 @@ style: |
 ## Key Finding: Skill Value Analysis
 
 ### Top 10 Highest Paying Skills
+
 ![](./top_10_highest_paying_skills.png)
 
 ---
@@ -157,10 +158,12 @@ style: |
 ## Key Insights & Findings
 
 ### High-Value Skills
+
 - *Scala*, *kubernetes*, *Spark* - emerging tech commands premium
 - *R*, *SQL* - established skills with strong compensation
 
 ### Market Factors
+
 - *Seniority* strongly correlates with compensation
 - *Company size* affects salary variability
 
@@ -169,10 +172,12 @@ style: |
 ## Conclusion & Strategic Insights
 
 ### For Job Seekers
+
 - Specialized skills (Scala, kubernetes) at high paid jobs
 - You have to go to the office for better salary
 
 ### For Employers
+
 - Market salary expectations vary significantly by skill
   - It may be cheaper to separate DevOps and Data Engineering roles from Data Science
 - Remote work can attract talent without geographic constraints
@@ -180,7 +185,6 @@ style: |
 ---
 ## Analysis further steps
 
-### Future Analysis
 - Predictive modeling for salary estimation
 - Collect data from sources like Glasdoor to calculate expected salary
 - Correlation between skill combinations and compensation
