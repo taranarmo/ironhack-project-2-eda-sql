@@ -61,6 +61,26 @@ Sergei Volkov
 
 ---
 
+# Jobs count
+
+---
+
+## Everyone wants seniors
+
+![](./job_postings_by_seniority.png)
+
+---
+
+## Job posts by industry
+
+![](./job_postings_by_industry.png)
+
+---
+
+# Salary
+
+---
+
 ## Huge difference in salary
 
 - Variance between countries is expected
@@ -81,22 +101,6 @@ Sergei Volkov
 - *IQR filtering*: Remove extreme values outside `Q1 - 1.5×IQR` to `Q3 + 1.5×IQR`
 - Applied separately for each country
 - Preserves legitimate salary variations while removing extreme outliers
-
----
-
-## Everyone wants seniors
-
-![](./job_postings_by_seniority.png)
-
----
-
-## Job posts by industry
-
-![](./job_postings_by_industry.png)
-
----
-
-# Salary analysis
 
 ---
 
