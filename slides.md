@@ -186,9 +186,22 @@ Sergei Volkov
 - Remote work can attract talent without geographic constraints
 
 ---
+
 ## Analysis further steps
 
 - Predictive modeling for salary estimation
 - Collect data from sources like Glasdoor to calculate expected salary
 - Correlation between skill combinations and compensation
 - Obtain time-series for trend analysis
+
+---
+
+## Toolset
+
+- Python + Pandas
+- matplotlib and Seaborn for plotting
+- Marp to create this presentation in Markdown
+
+---
+
+
